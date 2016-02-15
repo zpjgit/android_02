@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.Toast;
+import com.zpj.hardlibrary.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-              //  HardControl hardControl = new HardControl();
+                HardControl hardControl = new HardControl();
                 // Perform action on click
                 ledon = !ledon;
                 if (ledon) {
