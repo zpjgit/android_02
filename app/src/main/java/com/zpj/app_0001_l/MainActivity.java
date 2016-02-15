@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+              //  HardControl hardControl = new HardControl();
                 // Perform action on click
                 ledon = !ledon;
                 if (ledon) {
@@ -51,6 +54,66 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void onCheckboxClicked(View view) {
+        // Is the view now checked?
+        boolean checked = ((CheckBox) view).isChecked();
+
+        // Check which checkbox was clicked
+        switch(view.getId()) {
+            case R.id.LED1:
+                if (checked) {
+                    // Put some meat on the sandwich
+                    Toast.makeText(getApplicationContext(), "LED1 on", Toast.LENGTH_SHORT).show();
+                   // HardControl.ledCtrl(0, 1);
+                }
+                else {
+                    // Remove the meat
+                    Toast.makeText(getApplicationContext(), "LED1 off", Toast.LENGTH_SHORT).show();
+                   // HardControl.ledCtrl(0, 0);
+                }
+                break;
+            case R.id.LED2:
+                if (checked) {
+                    // Put some meat on the sandwich
+                    Toast.makeText(getApplicationContext(), "LED2 on", Toast.LENGTH_SHORT).show();
+                   // HardControl.ledCtrl(1, 1);
+                }
+                else {
+                    // Remove the meat
+                    Toast.makeText(getApplicationContext(), "LED2 off", Toast.LENGTH_SHORT).show();
+                  //  HardControl.ledCtrl(1, 0);
+                }
+                break;
+            case R.id.LED3:
+                if (checked) {
+                    // Put some meat on the sandwich
+                    Toast.makeText(getApplicationContext(), "LED3 on", Toast.LENGTH_SHORT).show();
+                    //HardControl.ledCtrl(2, 1);
+                }
+                else {
+                    // Remove the meat
+                    Toast.makeText(getApplicationContext(), "LED3 off", Toast.LENGTH_SHORT).show();
+                   // HardControl.ledCtrl(2, 0);
+                }
+                break;
+            case R.id.LED4:
+                if (checked) {
+                    // Put some meat on the sandwich
+                    Toast.makeText(getApplicationContext(), "LED4 on", Toast.LENGTH_SHORT).show();
+                   // HardControl.ledCtrl(3, 1);
+                }
+                else {
+                    // Remove the meat
+                    Toast.makeText(getApplicationContext(), "LED4 off", Toast.LENGTH_SHORT).show();
+                    //HardControl.ledCtrl(3, 0);
+                }
+                break;
+
+            // TODO: Veggie sandwich
+        }
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
